@@ -1,10 +1,10 @@
 missing module named resource - imported by posix, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named posix - imported by os, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named _posixsubprocess - imported by subprocess, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
+missing module named org - imported by pickle, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named clr - imported by pyreadline.clipboard.ironpython_clipboard, pyreadline.console.ironpython_console, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named IronPythonConsole - imported by pyreadline.console.ironpython_console, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named StringIO - imported by pyreadline.py3k_compat, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
-missing module named org - imported by pickle, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named System - imported by pyreadline.clipboard.ironpython_clipboard, pyreadline.keysyms.ironpython_keysyms, pyreadline.console.ironpython_console, pyreadline.rlmain, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named sets - imported by pyreadline.keysyms.common, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named startup - imported by pyreadline.keysyms.common, pyreadline.keysyms.keysyms, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
@@ -18,7 +18,7 @@ missing module named 'java.lang' - imported by platform, D:\2017Summer\AutoBacku
 missing module named vms_lib - imported by platform, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named termios - imported by tty, D:\2017Summer\AutoBackup\pyinstaller\autoback.py, getpass
 missing module named grp - imported by tarfile, shutil, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
+missing module named 'org.python' - imported by copy, D:\2017Summer\AutoBackup\pyinstaller\autoback.py, xml.sax
 missing module named pwd - imported by posixpath, tarfile, shutil, http.server, webbrowser, D:\2017Summer\AutoBackup\pyinstaller\autoback.py, netrc, getpass
 missing module named ce - imported by os, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
 missing module named _dummy_threading - imported by dummy_threading, D:\2017Summer\AutoBackup\pyinstaller\autoback.py
-missing module named 'org.python' - imported by copy, D:\2017Summer\AutoBackup\pyinstaller\autoback.py, xml.sax
