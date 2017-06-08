@@ -27,7 +27,7 @@ def copyfile(drives):
         for root, dirs, files in os.walk(udisk):
             for one in files:
                 type = os.path.splitext(one)[1]
-                if type == ".ppt" or type == ".pptx" or type == ".doc" or type == ".docx" or type == ".pdf":
+                if type == ".doc" or type == ".docx" or type == ".pdf":
                     if len(root)>3 and not os.path.exists(today+root[3:]):
                         os.makedirs(today+root[3:])
                     shutil.copy(root+'/'+one,today+root[3:]+'/'+one)
