@@ -39,8 +39,8 @@ def getremovabledisk():
     return drives
 
 
-def copyfile(drives):
-    target_dir = ''  # Your target dir
+def copyfile(drives,target_dir):
+    
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
     today = target_dir + time.strftime('%Y%m%d%H%M') + '/'
@@ -58,6 +58,7 @@ if __name__ == '__main__':
     host = ""  #Your server IP
     user = "" # Your ssh user/name
     pwd = "" #Your password
+    target_dir = ''  # Your target dir
     drives_bk = []
     while 1:
         time.sleep(20)
@@ -65,7 +66,7 @@ if __name__ == '__main__':
         if (drives != drives_bk) & (len(drives_bk) < len(drives)):
             # new U Disk
             drives_bk = drives
-            copyfile(drives)
+            copyfile(drives,target_dir)
             sftp_upload_file(host,user,pwd,drives)
         if (drives != drives_bk) & (len(drives_bk) > len(drives)):
             # Disk remove
